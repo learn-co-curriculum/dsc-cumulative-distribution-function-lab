@@ -1,5 +1,5 @@
 
-# Cumulative Distribution Function (CDF) - Lab
+# The Cumulative Distribution Function (CDF) - Lab
 
 ## Introduction
 In the previous lesson we saw how we can use a discrete random variable used for modeling fair die having a uniform probabilities for all possible values. In this lab, we shall try to calculate a cdf for this variable and visualize it for inspection.
@@ -10,7 +10,7 @@ You will be able to:
 * Calculate the cdf for a given discrete random variable
 * Visualize the cdf using matplotlib 
 
-## Calculating cdf in python 
+## Calculating CDF in python 
 
 Recall the formula for calculate the cumulative probability from previous lesson:
 

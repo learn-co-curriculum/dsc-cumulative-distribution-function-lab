@@ -1,16 +1,18 @@
 
-# Cumulative Distribution Function - cdf (Lab)
+# The Cumulative Distribution Function (CDF) - Lab
+
+## Introduction
 
 In the previous lesson we saw how we can use a discrete random variable used for modeling fair die having a uniform probabilities for all possible values. In this lab, we shall try to calculate a cdf for this variable and visualize it for inspection.
 
 ## Objectives
-Students would be able to :
+You will be able to:
 
 * Calculate the cdf for a given discrete random variable
 * Visualize the cdf using matplotlib 
 
 
-### Calculating cdf in python 
+## Calculating CDF in python 
 
 Recall the formula for calculate the cumulative probability from previous lesson:
 
@@ -97,11 +99,7 @@ plt.ylabel('Cumulative Probabilities')
 
 
 
-
-![png](index_files/index_7_1.png)
-
-
-### Level Up (optional)
+## Level Up (optional)
 
 cdfs (and pmfs) can be calculated using built in numpy and matplotlib methods. So we don't have create custom functions to calculate these. We can draw a histogram styled cdf as shown below using following methods. 
 
@@ -113,6 +111,7 @@ You would need to perform these steps
 
 
 ```python
+import numpy as np
 sample = [1,2,3,4,5,6]
 hist = np.histogram(sample, bins=6, range=(1, 7), normed=True)
 plt.step(hist[1][:-1], np.cumsum(hist[0]))

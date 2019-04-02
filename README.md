@@ -90,10 +90,6 @@ plt.xlabel('Dice values')
 plt.ylabel('Cumulative Probabilities');
 ```
 
-
-![png](index_files/index_7_0.png)
-
-
 ## Level Up (optional)
 
 CDFs (and PMFss) can be calculated using built-in Numpy and Matplotlib methods. So we don't have create custom functions to calculate these. We can draw a histogram styled CDF as shown below using the following steps
@@ -110,8 +106,8 @@ import numpy as np
 sample = [1,2,3,4,5,6]
 hist = np.histogram(sample, bins=6, range=(1, 7), normed=True)
 plt.step(hist[1][:-1], np.cumsum(hist[0]))
-plt.title ("Die Roll -  Cumulative Distribution Function");
-plt.xlabel("Die Values")
+plt.title ("Dice Roll -  Cumulative Distribution Function");
+plt.xlabel("Dice Values")
 plt.ylabel("Cumulative Probability")
 plt.show()
 ```

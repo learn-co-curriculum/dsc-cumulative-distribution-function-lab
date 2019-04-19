@@ -21,7 +21,7 @@ So given a list of all possible values of x, We can easily calculate the CDF for
 
 * Build a function `calculate_cdf(lst,X)`, where `lst` is a list of all possible values in a discrete variable $x$ (6 values for a dice roll), and $X$ is the value for which we want to calculate the cumulative distribution function 
 * Initialize a count variable
-* for all values in `lst`, if a value is less than $X$, add one to count - do nothing otherwise. (this will tell us the total number of values less than $X$) 
+* for all values in `lst`, if a value is less than or equal to $X$, add one to count - do nothing otherwise. (this will tell us the total number of values less than $X$) 
 * Calculate the cumulative probability of $X$ dividing the count with the total possible values
 * Round by 3 decimals and return the cumulative probability of $X$
 
@@ -31,7 +31,7 @@ So given a list of all possible values of x, We can easily calculate the CDF for
 def calculate_cdf(lst, X):
     count = 0
     for value in lst:
-        if value < X:
+        if value <= X:
             count += 1
 
     cum_prob = count / len(lst) # normalizing cumulative probabilities (as with pmfs)
@@ -47,7 +47,7 @@ calculate_cdf(test_lst, test_X)
 
 
 
-    0.333
+    0.667
 
 
 
@@ -70,7 +70,7 @@ dice_cum
 
 
 
-    [0.0, 0.167, 0.333, 0.5, 0.667, 0.833]
+    [0.167, 0.333, 0.5, 0.667, 0.833, 1.0]
 
 
 
@@ -102,18 +102,19 @@ CDFs (and PMFs) can be calculated using built-in Numpy and Matplotlib methods. S
 You would need to perform these steps
 * Use `np.histogram()` to automatically calculate the histogram with probabilities. [Here is numpy histogram documentation](https://docs.scipy.org/doc/numpy/reference/generated/numpy.histogram.html) to help you dig deeper.
 
-* Use [`plt.step()`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.step.html) method with [`np.cumsum()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.cumsum.html) to calculate and plot cumulative probabilities (just like we did above). 
+* Use [`plt.scatter()`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html) method with [`np.cumsum()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.cumsum.html) to calculate and plot cumulative probabilities (just like we did above). 
 
 
 
 ```python
 import numpy as np
 sample = [1,2,3,4,5,6]
-hist = np.histogram(sample, bins=6, range=(1, 7), normed=True)
-plt.step(hist[1][:-1], np.cumsum(hist[0]))
+hist = np.histogram(sample, bins=6, range=(1,7), normed=True)
+plt.scatter(hist[1][:-1], np.cumsum(hist[0]))
 plt.title ("Dice Roll -  Cumulative Distribution Function");
 plt.xlabel("Dice Values")
 plt.ylabel("Cumulative Probability")
+plt.yticks(np.linspace(0,1,num=7))
 plt.show()
 ```
 

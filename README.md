@@ -31,7 +31,7 @@ So given a list of all possible values of x, We can easily calculate the CDF for
 def calculate_cdf(lst, X):
     count = 0
     for value in lst:
-        if value <= X:
+        if value < X:
             count += 1
 
     cum_prob = count / len(lst) # normalizing cumulative probabilities (as with pmfs)
@@ -47,7 +47,7 @@ calculate_cdf(test_lst, test_X)
 
 
 
-    0.667
+    0.333
 
 
 
@@ -70,7 +70,7 @@ dice_cum
 
 
 
-    [0.167, 0.333, 0.5, 0.667, 0.833, 1.0]
+    [0.0, 0.167, 0.333, 0.5, 0.667, 0.833]
 
 
 
@@ -82,6 +82,7 @@ Following this, we now have a list of possible values, and a second list contain
 
 ```python
 import matplotlib.pyplot as plt
+%matplotlib inline
 plt.style.use('ggplot')
 
 plt.bar(dice_lst, dice_cum, width=0.3);
@@ -89,6 +90,10 @@ plt.title ("Dice Roll -  Cumulative Distribution Function");
 plt.xlabel('Dice values')
 plt.ylabel('Cumulative Probabilities');
 ```
+
+
+![png](index_files/index_7_0.png)
+
 
 ## Level Up (optional)
 

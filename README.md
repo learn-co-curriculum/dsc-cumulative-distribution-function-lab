@@ -20,9 +20,9 @@ $$\Large F(x)= P(X \leq x)$$
 So given a list of all possible values of x, We can easily calculate the CDF for a given possible value $X$ by performing the following steps:
 
 * Build a function `calculate_cdf(lst,X)`, where `lst` is a list of all possible values in a discrete variable $x$ (6 values for a dice roll), and $X$ is the value for which we want to calculate the cumulative distribution function 
-* Initialize a count variable
-* for all values in `lst`, if a value is less than or equal to $X$, add one to count - do nothing otherwise. (this will tell us the total number of values less than $X$) 
-* Calculate the cumulative probability of $X$ dividing the count with the total possible values
+* Initialize a variable called `count`
+* For all values in `lst`, if a value is less than or equal to $X$, add one to `count` - do nothing otherwise. (this will tell us the total number of values less than $X$) 
+* Calculate the cumulative probability of $X$ dividing `count` by the total number of possible values
 * Round by 3 decimals and return the cumulative probability of $X$
 
 
@@ -74,7 +74,7 @@ calculate_cdf(test_lst, test_X)
 
 
 
-Now, use this function to calculate a cdf for each value in a dice roll so you can plot it later on.
+Now, use this function to calculate a CDF for each value in a dice roll so you can plot it later on.
 
 Perform the following steps in the cell below:
 * Create a list `dice_lst` with all possible values of a fair dice
@@ -117,7 +117,7 @@ dice_cum
 
 > CDFs are implemented with two sorted lists: one list which contains the potential outcome values of your discrete distribution, and another list which contains cumulative probabilities.
 
-Following this, we now have a list of possible values, and a second list containing cumulative probabilities for each value. Let's go ahead and plot these values in matplotlib using a bar plot. 
+Following this, we now have a list of possible values and a second list containing cumulative probabilities for each value. Let's go ahead and plot these values in matplotlib using a bar plot. 
 * Use `dice_lst` for x-axis and `dice_cum` for y-axis
 
 
@@ -148,7 +148,7 @@ plt.ylabel('Cumulative Probabilities');
 
 ## Level Up (optional)
 
-CDFs (and PMFs) can be calculated using built-in Numpy and Matplotlib methods. So we don't have create custom functions to calculate these. We can draw a histogram styled CDF as shown below using the following steps
+CDFs (and PMFs) can be calculated using built-in NumPy and matplotlib methods. So we don't have create custom functions to calculate these. We can draw a histogram styled CDF as shown below using the following steps
 
 You would need to perform these steps
 * Use `np.histogram()` to automatically calculate the histogram with probabilities. [Here is numpy histogram documentation](https://docs.scipy.org/doc/numpy/reference/generated/numpy.histogram.html) to help you dig deeper.
@@ -185,4 +185,4 @@ plt.show()
 
 ## Summary 
 
-In this lesson we looked at developing a cdf a percentile function of a discrete random variable. We looked at how to calculate and visualize a cdf. This technique can also be applied to continuous random variables which we shall see later in this section. 
+In this lesson, we looked at developing a CDF - a percentile function of a discrete random variable. We looked at how to calculate and visualize a CDF. This technique can also be applied to continuous random variables which we shall see later in this section. 

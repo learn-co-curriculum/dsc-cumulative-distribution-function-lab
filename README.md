@@ -8,8 +8,8 @@ In the previous lesson, you learned how you can create a cumulative distribution
 ## Objectives
 You will be able to:
 
-* Calculate the CDF for a discrete random variable
-* Visualize the CDF using matplotlib 
+* Calculate CDF in Python for a given discrete variable with a limited set of possible values
+* Visualize and inspect a CDF in order to make assumptions about the underlying data
 
 ## Calculating CDF in Python 
 

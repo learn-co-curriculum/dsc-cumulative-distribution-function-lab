@@ -1,4 +1,3 @@
-
 # The Cumulative Distribution Function - Lab
 
 ## Introduction
@@ -92,7 +91,9 @@ plt.ylabel('Cumulative Probabilities');
 ```
 
 
+    
 ![png](index_files/index_7_0.png)
+    
 
 
 ## Level Up (optional)
@@ -109,7 +110,7 @@ You would need to perform these steps
 ```python
 import numpy as np
 sample = [1,2,3,4,5,6]
-hist = np.histogram(sample, bins=6, range=(1,7), normed=True)
+hist = np.histogram(sample, bins=6, range=(1,7), density=True)
 plt.scatter(hist[1][:-1], np.cumsum(hist[0]))
 plt.title ("Dice Roll -  Cumulative Distribution Function");
 plt.xlabel("Dice Values")
@@ -119,7 +120,9 @@ plt.show()
 ```
 
 
+    
 ![png](index_files/index_9_0.png)
+    
 
 
 ## Summary 

@@ -1,4 +1,3 @@
-
 # The Cumulative Distribution Function - Lab
 
 ## Introduction
@@ -83,7 +82,9 @@ Following this, we now have a list of possible values and a second list containi
 ```
 
 
+    
 ![png](index_files/index_7_0.png)
+    
 
 
 ## Level Up (optional)
@@ -102,7 +103,9 @@ You would need to perform these steps
 ```
 
 
+    
 ![png](index_files/index_9_0.png)
+    
 
 
 ## Summary 
